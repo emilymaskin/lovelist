@@ -1,0 +1,11 @@
+<div id="offers_wrapper">
+	<?php foreach($offer as $e) { ?>
+	<div class="box">
+		<div class="left">
+			<img src="/brand_offers/<?php echo $e['Brand']['id']; ?>.jpg" alt="" />
+			<p><?php echo $e['Brand']['special_offer']; ?></p>
+		</div>
+		<a href="<?php echo $e['Brand']['offer_url']; ?>" target="_blank" class="buy_link">SHOP NOW!</a>
+	</div>
+	<?php } ?>
+</div>

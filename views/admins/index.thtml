@@ -1,0 +1,18 @@
+<?php if(isset($users)){?>
+<table>
+	<th></th>
+	<th>User</th>
+	<th>Time</th>
+	<th>Email</th>
+	<?php 
+	$i = 1;
+	foreach($users as $e){ ?>
+	<tr>
+		<td><?php echo $i; ?></td>
+		<td><?php echo $e['Fbuser']['facebook_id']; ?></td>
+		<td><?php echo $e['Event']['created']; ?></td>
+		<td><a href="/admins/fb_email/<?php echo $e['Fbuser']['facebook_id']; ?>">Send email</a></td>
+	</tr>
+	<?php $i++; } ?>
+</table>
+<?php } ?>

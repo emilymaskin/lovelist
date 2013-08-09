@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="imagetoolbar" content="no" />
+	
+	<meta name="description" content="<?php echo isset($meta_description) ? $meta_description : 'The InStyle Boutique is a promotional online pop-up store featuring must-haves in fashion and beauty. Exciting features include a loyalty rewards program and daily sweepstakes!'; ?>" />
+		
+	<meta property="og:title" content="<?php echo $title_for_layout ? $title_for_layout . ' | ' : ''; ?>InStyle Boutique" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<?php echo FULL_BASE_URL . $_SERVER["REQUEST_URI"]; ?>" />
+    <meta property="og:image" content="<?php echo FULL_BASE_URL . (isset($og_image) ? $og_image : '/img/og_logo.jpg'); ?>" />
+    <meta property="og:site_name" content="InStyle Boutique" />
+    <meta property="og:description" content="<?php echo isset($meta_description) ? $meta_description : 'The InStyle Boutique is a promotional online pop-up store featuring must-haves in fashion and beauty. Exciting features include a loyalty rewards program and daily sweepstakes!'; ?>" />
+	
+	<script type="text/javascript" src="/js/prototype.js"></script>
+	<script type="text/javascript" src="/js/scriptaculous/scriptaculous.js?load=effects,dragdrop"></script>
+	<script type="text/javascript" src="/js/swfobject.js"></script>
+	<script type="text/javascript" src="/js/hu.eventtracker.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="/css/reset-fonts.css" />
+	<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<?php echo $this->controller->getAllJS(); ?>
+	<?php echo $this->controller->getAllCSS(); ?>
+	
+	<title><?php echo $title_for_layout ? $title_for_layout . ' | ' : ''; ?>InStyle Boutique</title>
+</head>
+<body>
+	<div id="wrapper">
+		<h4 style="display:none;">Your points:</h4>
+		<div id="points" style="display:none;"><?php echo $points; ?></div>
+		<div class="topnav-container">
+			<a href="/"><img id="logo" src="/img/nav/logo.gif" alt="InStyle Boutique" /></a>
+			<a href="http://www.instyle.com" id="from-instyle" class="inline"></a>
+			<ul class="topnav">
+				<li class="nav-link-1"><a <?php echo $this->controller->action == 'main' && $this->controller->name == 'Departments' ? ' class="selected"' : ''; ?> href="/departments/main"></a></li>
+				<li class="nav-link-2"><a <?php echo $this->controller->action == 'lovelist' && $this->controller->name == 'Pages' ? ' class="selected"' : ''; ?> href="/pages/lovelist"></a></li>
+				<li class="nav-link-3"><a <?php echo $this->controller->action == 'special_offers' && $this->controller->name == 'Pages' ? ' class="selected"' : ''; ?> href="/pages/special_offers"></a></li>
+				<li class="nav-link-4"><a <?php echo $this->controller->action == 'sweepstakes' && $this->controller->name == 'Pages' ? ' class="selected"' : ''; ?> href="/pages/sweepstakes"></a></li>
+				<?php if($signed_in) { ?>
+					<li class="signout nav-link-5"><a href="javascript:;" onclick="fb_logout();"></a></li>
+				<?php } else { ?>
+					<li class="signin nav-link-5"><a href="javascript:;" onclick="fb_login();"></a></li>
+				<?php } ?>
+				<li class="nav-link-6"><a <?php echo $this->controller->action == 'shopping' && $this->controller->name == 'Pages' ? ' class="selected"' : ''; ?> href="/pages/shopping"></a></li>
+				<li class="nav-link-7"><a <?php echo $this->controller->action == 'trends' && $this->controller->name == 'Pages' ? ' class="selected"' : ''; ?> href="/trends"></a></li>
+				<li class="nav-link-8"><a <?php echo $this->controller->action == 'rewards' && $this->controller->name == 'Pages' ? ' class="selected"' : ''; ?> href="/pages/rewards"></a></li>
+			</ul>
+		</div>
+		<?php if($this->controller->action != 'trends' && $this->controller->action != 'shopping') { ?>
+		<p class="promotion">PROMOTION</p>
+		<?php } ?>
+		<div style="clear:left;"></div>
+		
+		<div><?php echo $content_for_layout; ?></div>
+		
+		<div>
+			<?php if(!($this->controller->name == "Departments" && $this->controller->action == "index")) { ?>
+			<ul class="bottomnav">
+				<li class="bottom-link-1"><a <?php echo $this->controller->action == 'faqs' && $this->controller->name == 'Pages' ? ' class="selected"' : ''; ?> href="/pages/faqs"></a></li>
+				<li>|</li>
+				<li class="bottom-link-2"><a href="https://subscription.instyle.com/storefront/subscribe-to-instyle-for-less-than-20-dollars/site/in_polish0410.html;jsessionid=rqGTMrXTzw6vX2P4CMQRhpjJBchvW3HWLl46JBpnwxjFV4Bvhjzq!1772636494?link=1000169"></a></li>
+				<li>|</li>
+				<li class="bottom-link-3"><a <?php echo $this->controller->action == 'privacy' && $this->controller->name == 'Pages' ? ' class="selected"' : ''; ?> href="/pages/privacy"></a></li>
+				<li>|</li>
+				<li class="bottom-link-4"><a <?php echo $this->controller->action == 'terms' && $this->controller->name == 'Pages' ? ' class="selected"' : ''; ?> href="/pages/terms"></a></li>
+				<li>|</li>
+				<li class="bottom-link-5"><a href="http://www.stylefeeder.com/about.html"></a></li>
+				<li>|</li>
+				<li class="bottom-link-6"><a href="http://www.instyle.com/instyle/"></a></li>
+			</ul>
+			<?php } ?>
+			<p class="copyright">
+				InStyle and InStyle.com are part of the Time Inc. Style Network Copyright &copy; 2010 Time Inc. InStyle is a registered trademark of Time Inc. All rights reserved. Design by <a href="http://www.spill.net/" target="_blank"><span class="bold">Spill</span></a>.
+			</p>
+		</div>
+	</div>
+
+<?php if(! $signed_in) { ?>
+<iframe id="fb_refresh_frame" width="0" height="0" frameborder="0"></iframe>
+<?php } ?>
+<div id="fb-root"></div>
+
+<script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
+<script type="text/javascript">
+FB.init({appId: <?php echo FACEBOOK_APP_ID; ?>, status: true, cookie: true}, '/xd_receiver.htm');
+
+function fb_login()
+{
+	FB.login(function(response) {
+
+		$('fb_refresh_frame').src = '/pages/fb_refresh';
+	
+	}, {perms:'email'});
+}
+function fb_logout()
+{
+	FB.logout(function(response) {
+		// user is now logged out
+	    window.location = window.location;
+		window.location.reload();
+	});
+}
+
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-249204-68']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

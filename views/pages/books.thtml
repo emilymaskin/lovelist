@@ -1,0 +1,99 @@
+<ul id="path">
+	<li><a href="/departments/main">SHOP BY DEPARTMENT</a></li>
+	<li class="divider">&gt;</li>
+	<li><a href="/pages/books" class="current_brand">BOOKS</a></li>
+</ul>
+<div class="mainbox">
+	<div id="video">
+		<img src="/brand_videos/58.jpg" alt="" />
+	</div>
+</div>
+<div>
+	<div class="details-box">
+		<a name="product_detail" id="product_detail"></a>
+		<div id="brand_logo" class="center">
+			<img src="/brand_logos/58.jpg" alt="" />
+		</div>
+		<a href="javascript:;" onclick="booksPrev();" class="float-left"><img src="/img/lovelist/small_leftarrow.jpg" alt="Previous" /></a>
+		<div id="product_details">
+			<div id="details_0" style="display: block;">
+				<img src="/product_images/main/930.jpg" alt="" class="featured" />
+				<p class="title">InStyle New Secrets of Style</p>
+				<p class="description"><i>The New Secrets of Style</i> is your one-stop guide to dressing your best every day.</p>
+				<p class="price">$29.95</p>
+				<p class="price-text"></p>
+				<a href="http://instyle.com/newsos" id="buy0" style="display:none;"></a>
+			</div>
+			<div id="details_1" style="display: none;">
+				<img src="/product_images/main/931.jpg" alt="" class="featured" />
+				<p class="title">InStyle Ultimate Beauty Secrets</p>
+				<p class="description"><i>Ultimate Beauty Secrets</i> is a collection of 200+ insider tips and tricks for getting gorgeous.</p>
+				<p class="price">$22.95</p>
+				<p class="price-text"></p>
+				<a href="http://instyle.com/ultimate" id="buy1" style="display:none;"></a>
+			</div>
+		</div>
+		<a href="javascript:;" onclick="booksNext();" class="float-left"><img src="/img/lovelist/small_rightarrow.jpg" alt="Next" /></a>
+		<div class="details_links center">
+			<a href="http://instyle.com/newsos" class="buy_now" id="buy" target="_blank">BUY NOW</a>
+			<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4c44a4b53a3442e1"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" alt="Bookmark and Share" style="border: medium none; float: left;" height="16" width="125" /></a>
+			<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4c44a4b53a3442e1"></script>
+		</div>
+	</div>
+	<div id="lists" style="height:230px;">
+		<div id="items_wrapper" class="wrapper">
+			<div style="display: block;" id="items">
+				<a style="border-color: #ccc;" href="javascript:;" class="items" id="item1" onclick="booksPrev();">
+					<img id="product_930" style="cursor: move;" src="/product_images/thumb/930.jpg" alt="" />
+					<p class="name">InStyle New Secrets of Style</p>
+					<p class="price">$29.95</p>
+					<p class="view" onclick="details_slider.switchTo(0)">VIEW PRODUCT DETAIL</p>
+				</a>
+				<a href="javascript:;" class="items" id="item2" onclick="booksNext();">
+					<img id="product_931" style="cursor: move;" src="/product_images/thumb/931.jpg" alt="" />
+					<p class="name">InStyle Ultimate Beauty Secrets</p>
+					<p class="price">$22.95</p>
+					<p class="view" onclick="details_slider.switchTo(1)">VIEW PRODUCT DETAIL</p>
+				</a>
+			</div>
+		</div>
+		<div id="smallarrows" class="center">
+			<a href="javascript:;" onclick="booksPrev();" class="float-left"><img src="/img/lovelist/small_leftarrow.jpg" alt="Previous" /></a>
+			<span id="item_shown" class="float-left">1</span><span id="total_items" class="float-left">/2</span>
+			<a href="javascript:;" onclick="booksNext();" class="float-left"><img src="/img/lovelist/small_rightarrow.jpg" alt="Next" /></a>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+
+	Event.observe(window,'load', function(){
+		HU.EventTracker.add('video_load',9);
+		items_slider = new HU.Slider({ div_id: 'items', total_slots: 2, slide_by: 123, duration: 0.3, list_size: 2});
+		details_slider = new TMAT.Rotator({img_id_prefix: 'details_', total: 2, width: 540, duration: 0.3, effect: 'slideLeft'});
+	});
+	
+	function booksNext(){
+		details_slider.next();
+		_updatePosition();
+	}
+	function booksPrev(){
+		details_slider.prev();
+		_updatePosition();
+	}
+	
+	function _updatePosition(){
+		if($('item_shown').innerHTML == 1){
+			$('item_shown').innerHTML = 2;
+			$('item1').style.borderColor = "#FFF";
+			$('item2').style.borderColor = "#CCC";
+			$('buy').href = $('buy1').href;
+		}
+		else if($('item_shown').innerHTML == 2){
+			$('item_shown').innerHTML = 1;
+			$('item2').style.borderColor = "#FFF"
+			$('item1').style.borderColor = "#CCC";
+			$('buy').href = $('buy0').href;
+		}
+	}
+
+</script>

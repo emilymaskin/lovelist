@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta http-equiv="imagetoolbar" content="no" />
+	
+		<meta name="description" content="<?php echo isset($meta_description) ? $meta_description : 'The InStyle Boutique is a promotional online pop-up store featuring must-haves in fashion and beauty. Exciting features include a loyalty rewards program and daily sweepstakes!'; ?>" />
+		
+		<meta property="og:title" content="<?php echo $title_for_layout ? $title_for_layout . ' | ' : ''; ?>InStyle Boutique" />
+	    <meta property="og:type" content="website" />
+	    <meta property="og:url" content="<?php echo FULL_BASE_URL . $_SERVER["REQUEST_URI"]; ?>" />
+	    <meta property="og:image" content="<?php echo FULL_BASE_URL . (isset($og_image) ? $og_image : '/img/og_logo.jpg'); ?>" />
+	    <meta property="og:site_name" content="InStyle Boutique" />
+	    <meta property="og:description" content="<?php echo isset($meta_description) ? $meta_description : 'The InStyle Boutique is a promotional online pop-up store featuring must-haves in fashion and beauty. Exciting features include a loyalty rewards program and daily sweepstakes!'; ?>" />
+	
+		<script type="text/javascript" src="/js/prototype.js"></script>
+		<script type="text/javascript" src="/js/scriptaculous/scriptaculous.js?load=effects,dragdrop"></script>
+		<script type="text/javascript" src="/js/swfobject.js"></script>
+		<script type="text/javascript" src="/js/hu.eventtracker.js"></script>
+		<link rel="stylesheet" type="text/css" href="/css/reset-fonts.css" />
+		<link rel="stylesheet" type="text/css" href="/css/base.css" />
+		<?php echo $this->controller->getAllJS(); ?>
+		<?php echo $this->controller->getAllCSS(); ?>
+	
+		<title><?php echo $title_for_layout ? $title_for_layout . ' | ' : ''; ?>InStyle Boutique</title>
+	</head>
+	<body>
+		<div id="wrapper">
+			<ul id="admin-nav">
+				<li><a href="/admins">See all</a></li>
+				<li><a href="/admins/search">Search by date</a></li>
+			</ul>
+			<div><?php echo $content_for_layout; ?></div>
+		</div>
+		<div id="fb-root"></div>
+		<script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
+		<script type="text/javascript">
+		FB.init({appId: <?php echo FACEBOOK_APP_ID; ?>, cookie: true, '/xd_receiver.htm'});
+
+		function fb_login()
+		{
+			FB.login(function(response) {
+			  if (response.session) {
+			    window.location = window.location;
+				window.location.reload();
+			  } else {
+			    // user is not logged in
+			  }
+			}, {perms:'email'});
+		}
+		function fb_logout()
+		{
+			FB.logout(function(response) {
+				// user is now logged out
+			    window.location = window.location;
+				window.location.reload();
+			});
+		}
+		
+		</script>
+	</body>
+</html>

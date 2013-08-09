@@ -1,0 +1,164 @@
+<h1><span class="hide">Fall Trends To Try Now</span></h1>
+<div id="trends_left" class="inline">
+<?php for($i=0;$i<4;$i++){ ?>
+	<a href="/trend/<?php echo $all_trends[$i]['Trend']['category']; ?>" id="<?php echo $all_trends[$i]['Trend']['category']; ?>_video" class="eachtrend<?php echo $trend['category'] == $all_trends[$i]['Trend']['category'] ? ' current' : ''; ?>">
+		<img id="v<?php echo ($i+1); ?>" src="/img/trends/v<?php echo ($i+1); ?>_thumb.jpg" alt="" />
+		<h2 class="uppercase"><?php echo $all_trends[$i]['Trend']['category']; ?></h2>
+		<p><?php echo $all_trends[$i]['Trend']['tagline']; ?></p>
+	</a>
+<?php } ?>
+</div>
+
+<div id="trends_middle" class="inline">
+	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="494" height="372">
+		<param name="movie" value="/flash/video_player_small.swf" />
+		<param name="flashvars" value="firstVideo=/edit_videos/<?php echo $trend['category']; ?>.flv&amp;preRollVideo=<?php echo $preroll; ?>" />
+		<param name="allowScriptAccess" value="sameDomain" />
+		<!--[if !IE]>-->
+		<object type="application/x-shockwave-flash" data="/flash/video_player_small.swf" width="494" height="372">
+			<param name="flashvars" value="firstVideo=/edit_videos/<?php echo $trend['category']; ?>.flv&amp;preRollVideo=<?php echo $preroll; ?>" />
+			<param name="allowScriptAccess" value="sameDomain" />
+			<!--<![endif]-->
+	        <p class="flash-message">This page requires flash.</p>
+		<!--[if !IE]>-->
+		</object>
+		<!--<![endif]-->
+	</object>
+</div>
+<div id="trends_right">
+	<div id="trends_slider" class="inline">
+		<h3><span>SHOP</span> THE TREND</h3>
+		<div class="inline left-arrow"><a href="javascript:;" onclick="trendsPrev();"><img src="/img/trends/left_arrow.jpg" alt="previous" /></a></div>
+		<?php if($trend['category'] == 'fashion') { ?>
+		<div id="fashion">
+			<div class="each_item" id="fashion0">
+				<img class="featured" src="/img/trends/fashion/t3.jpg" alt="" />
+				<h4>LADYLIKE</h4>
+				<p class="description">The easiest way to get this look is with a fuller skirt—pair it with a fitted blouse to show off your waist.</p>
+				<p>LAUREN MOFFATT <span>$245</span></p>
+				<a id="fashion_link0" style="display:none;" href="http://laurenmoffattnyc.com/"></a>
+			</div>
+			<div class="each_item" id="fashion1" style="display:none;">
+				<img class="featured" src="/img/trends/fashion/t1.jpg" alt="" />
+				<h4>JEWEL TONES</h4>
+				<p class="description">Invest in a jewel-colored coat—it will add a luxe touch to jeans or a little black dress.</p>
+				<p>SONIA BY SONIA RYKIEL <span>$940</span></p>
+				<a id="fashion_link1" style="display:none;" href="http://www.net-a-porter.com/product/96468"></a>
+			</div>
+			<div class="each_item" id="fashion2" style="display:none;">
+				<img class="featured" src="/img/trends/fashion/t2.jpg" alt="" />
+				<h4>MINIMALISM</h4>
+				<p class="description">The key piece is a simple sheath in a versatile neutral like black, cream or camel—you’ll want to (and can!) wear it everywhere.</p>
+				<p>FRENCH CONNECTION <span>$198</span></p>
+				<a id="fashion_link2" style="display:none;" href="http://usa.frenchconnection.com/product/woman+New+In+dresses/71YJ3/sasha+dress.htm"></a>
+			</div>
+		</div>
+		<?php } elseif($trend['category'] == 'hair') { ?>
+		<div id="hair">
+			<div class="each_item" id="hair0">
+				<img class="featured" src="/img/trends/hair/t3.jpg" alt="" />
+				<h4>LONG BANGS</h4>
+				<p class="description">Make sure your between-appointment trims are precise, not disastrous, with these professional-quality scissors.</p>
+				<p>TWEEZERMAN <span>$25</span></p>
+				<a id="hair_link0" style="display:none;" href="http://www.folica.com/tools/shears/tweezerman-stainless-steal-two-thousand-styling-shears"></a>
+			</div>
+			<div class="each_item" id="hair1" style="display:none;">
+				<img class="featured" src="/img/trends/hair/t1.jpg" alt="" />
+				<h4>NEW BEDHEAD</h4>
+				<p class="description">A tiny dab of this beeswax-infused cream leaves strands believably tousled—not crunchy or greasy.</p>
+				<p>AVEDA <span>$24</span></p>
+				<a id="hair_link1" style="display:none;" href="http://www.aveda.com/product/CATEGORY10604/PROD15806/Collections/Light_Elements/index.tmpl"></a>
+			</div>
+			<div class="each_item" id="hair2" style="display:none;">
+				<img class="featured" src="/img/trends/hair/t2.jpg" alt="" />
+				<h4>LOW PONYTAIL</h4>
+				<p class="description">Tame strays and keep ponytails sleek and well-conditioned with this smoothing, shine-enhancing lotion.</p>
+				<p>HERCUT <span>$22</span></p>
+				<a id="hair_link2" style="display:none;" href="http://www.sephora.com/browse/product.jhtml?id=P265509#"></a>
+			</div>
+		</div>
+		<?php } elseif($trend['category'] == 'accessories') { ?>
+		<div id="accessories">
+			<div class="each_item" id="accessories0">
+				<img class="featured" src="/img/trends/accessories/t2.jpg" alt="" />
+				<h4>LEOPARD</h4>
+				<p class="description">Shake up an otherwise buttoned-up outfit by carrying a fun, leopard-print bag.</p>
+				<p>REBECCA MINKOFF <span>$350</span></p>
+				<a id="accessories_link0" style="display:none;" href="http://www.shopbop.com/leopard-fling-clutch-rebecca-minkoff/vp/v=1/845524441874260.htm"></a>
+			</div>
+			<div class="each_item" id="accessories1" style="display:none;">
+				<img class="featured" src="/img/trends/accessories/t5.jpg" alt="" />
+				<h4>PEARLS</h4>
+				<p class="description">Who said you have to save your pearls for cocktail hour? The new strands add edge to jeans and tees, too.</p>
+				<p>WHITE HOUSE BLACK MARKET <span>$88</span></p>
+				<a id="accessories_link1" style="display:none;" href="http://bit.ly/dfKofO"></a>
+			</div>
+			<div class="each_item" id="accessories2" style="display:none;">
+				<img class="featured" src="/img/trends/accessories/t1.jpg" alt="" />
+				<h4>LACE-UP BOOTS</h4>
+				<p class="description">Toughen up your feminine skirts and dresses with a pair of lace-up boots.</p>
+				<p>NINE WEST <span>$139</span></p>
+				<a id="accessories_link2" style="display:none;" href="http://piperlime.gap.com/browse/product.do?cid=4016&amp;vid=1&amp;pid=813779&amp;scid=813779002"></a>
+			</div>
+		</div>
+		<?php } elseif($trend['category'] == 'makeup') { ?>
+		<div id="makeup">
+			<div class="each_item" id="makeup0">
+				<img class="featured" src="/img/trends/makeup/t3.jpg" alt="" />
+				<h4>BERRY LIPS</h4>
+				<p>The perfect purple-y/crimson shade in a silky, hydrating formula. Bonus: The metallic tube is refillable!</p>
+				<p class="description">HOURGLASS COSMETICS <span>$30</span></p>
+				<a id="makeup_link0" style="display:none;" href="http://bit.ly/cyudcT"></a>
+			</div>
+			<div class="each_item" id="makeup1" style="display:none;">
+				<img class="featured" src="/img/trends/makeup/t1.jpg" alt="" />
+				<h4>CLEAN SKIN</h4>
+				<p class="description">This velvety stick works as a foundation, powder and concealer all at once, weightlessly masking imperfections for a porcelain-like finish.</p>
+				<p>PIXI <span>$26</span></p>
+				<a id="makeup_link1" style="display:none;" href="http://www.target.com/Pixi-Flawless-Beauty-Stick-No-3/dp/B003VL7652/ref=sc_qi_detailbutton"></a>
+			</div>
+			<div class="each_item" id="makeup2" style="display:none;">
+				<img class="featured" src="/img/trends/makeup/t2.jpg" alt="" />
+				<h4>IMPERFECT EYELINER</h4>
+				<p class="description">A creamy, intensely pigmented black pencil with a handy angled sponge—perfect for less-than-perfect lines.</p>
+				<p>DOLCE &amp; GABBANA <span>$29</span></p>
+				<a id="makeup_link2" style="display:none;" href="http://www.saksfifthavenue.com/main/ProductDetail.jsp?PRODUCT%3C%3Eprd_id=845524446227975&amp;FOLDER%3C%3Efolder_id=282574492713499&amp;bmUID=1279144119244&amp;ev19=1:2"></a>
+			</div>
+		</div>
+		<?php } ?>
+		<div class="inline right-arrow"><a href="javascript:;" onclick="trendsNext();"><img src="/img/trends/right_arrow.jpg" alt="next" /></a></div>
+		<div id="buy">
+			<a href="http://www.net-a-porter.com/product/96468" id="buylink" target="_blank">BUY NOW &#9658;</a>
+		</div>
+	</div>
+	<a href="http://www.instyle.com" class="bottomlink">MORE FALL TRENDS AT INSTYLE.COM &#9658;</a><br />
+	<a href="/pages/books" class="bottomlink">MORE STYLE ADVICE! SHOP <em>INSTYLE</em> BOOKS &#9658;</a>
+</div>
+
+<script type="text/javascript">
+	var trends_slider = new TMAT.Rotator({img_id_prefix: "<?php echo $trend['category']; ?>", total:3, width: 272, height: 300, duration: 0.4, effect: 'slideLeft', cycle: true, onChange: 'trendsOnChange'});
+	var $preroll_videos = ['preroll_dove.f4v','preroll_loreal.f4v'];
+	
+	trendsOnChange(0);
+	
+	var clicked = false;
+
+	function trendsOnChange($to){
+		$('buylink').setAttribute('href', $('<?php echo $trend["category"]; ?>_link'+$to).href);
+	}
+	
+	function trendsNext(){
+		clicked = true;
+		trends_slider.next();		
+	}
+	
+	function trendsPrev(){
+		clicked = true;
+		trends_slider.prev();		
+	}
+	
+	function trendsSwitchTo(to){
+		if(!clicked)
+			trends_slider.switchTo(to);
+	}
+</script>

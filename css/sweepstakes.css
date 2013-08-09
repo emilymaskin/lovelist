@@ -1,0 +1,23 @@
+#content{
+	margin-top:10px;
+	background:url(/img/sweepstakes/background.jpg) no-repeat top left;
+	height:550px;
+	padding:20px;
+}
+p.fineprint{
+	font-size:68%;
+	width:100%;
+	color:white;
+	margin-top:467px;
+}
+p.fineprint span{
+	font-weight:bold;
+}
+p.fineprint a{
+	color:#aaa;
+}
+a.enter{
+	position:relative;
+	top:448px;
+	left:450px;
+}

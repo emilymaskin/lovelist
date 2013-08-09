@@ -1,0 +1,15 @@
+<div id="content">
+	<?php if(!(isset($this->data['Email']) && $this->data['Email']['subject'] != '' && $this->data['Email']['message'] != '')){ ?>
+	<img id="userpic" src="http://graph.facebook.com/<?php echo $user['id']; ?>/picture" alt="" />
+	<p id="username">To: <?php echo $user['name'] . ' &lt;' . $user['email'] . '&gt;'; ?></p>
+	<form id="email-form" method="post" action="">
+		<label>Subject:</label>
+		<input type="text" name="data[Email][subject]" />
+		<label>Message:</label>
+		<textarea type="text" name="data[Email][message]"></textarea>
+		<input type="submit" value="Send" class="button" />
+	</form>
+	<?php } else { ?>
+	<p id="message"><?php echo $message; ?><a href="/admins">Go back</a></p>
+	<?php } ?>
+</div>

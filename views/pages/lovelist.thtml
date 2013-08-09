@@ -1,0 +1,31 @@
+<h1><span class="hide">LOVE LIST</span></h1>
+<div class="step">
+	<img src="/img/lovelist/image1.jpg" alt="">
+	<h2 class="subhead1"><span class="hide">STEP ONE</span></h2>
+	<p>
+		Sign in
+	</p>
+</div>
+<div class="step">
+	<img src="/img/lovelist/image2.jpg" alt="">
+	<h2 class="subhead2"><span class="hide">STEP TWO</span></h2>
+	<p>
+		Drag and drop your favorite items into the Love List bar on any Boutique page. Your
+		Love List will remember your favorites and travel with you from Boutique to Boutique.
+	</p>
+</div>
+<div class="step">
+	<img src="/img/lovelist/image3.jpg" alt="">
+	<h2 class="subhead3"><span class="hide">STEP THREE</span></h2>
+	<p>
+		Ask Love List to suggest new items based on your choices.
+	</p>
+</div>
+<div class="step">
+	<img src="/img/lovelist/image4.jpg" alt="">
+	<h2 class="subhead4"><span class="hide">STEP FOUR</span></h2>
+	<p>
+		Love List takes you straight to the good stuff using real-time shopping technology!
+	</p>
+</div>
+<img src="/img/lovelist/personalized.jpg" alt="" />

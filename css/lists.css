@@ -1,0 +1,290 @@
+.center{
+	margin:0px auto;
+}
+.mainbox{
+	border:1px solid #c0c0c0;
+	border-right:none;
+	border-left:none;
+	height:480px;
+	width:640px;
+	float:left;
+	overflow:hidden;
+}
+.mainbox-border{
+	border:1px solid #c0c0c0;
+	border-right:none;
+	height:480px;
+	width:640px;
+	float:left;
+	overflow:hidden;
+}
+
+/*details slider*/
+.details-box{
+	float:left;
+	clear:none;
+	width:310px;
+	height:480px;
+	overflow:hidden;
+	border:1px solid #c0c0c0;
+	border-left:none;
+	padding:0px 18px;
+}
+.details-box a.float-left{
+	margin-top:90px;
+}
+#brand_logo{
+	width:100%;
+	padding:8px 0px;
+}
+#brand_logo img{
+	width:250px;
+	margin:0px auto;
+	display:block;
+}
+#product_details{
+	width:270px;
+	position:relative;
+	height:341px;
+	float:left;
+	overflow:hidden;
+}
+#product_details div{
+	position:absolute;
+	width:266px;
+	padding:0px 2px;
+}
+#product_details div img{
+	height:230px;
+	width:250px;
+	display:block;
+	margin:0px auto;
+}
+#product_details div p.title{
+	text-transform:uppercase;
+	padding-top:8px;
+	font-size:116%;
+}
+#product_details div p.price{
+	font-size:116%;
+}
+#product_details div p.price-text{
+	font-size:77%;
+	color:#999;
+}
+#product_details div p.description{
+	font-size:77%;
+}
+.details_links{
+	width:270px;
+	margin:0px auto;
+	clear:both;
+}
+.details_links a{
+	display:block;
+	width:270px;
+	height:13px;
+	color:white;
+	text-align:center;
+	font-size:93%;
+	padding:6px 0px;
+}
+.buy_now{
+	background-color:#bf1c23;
+	margin-bottom:1px;
+}
+.special_offer{
+	background-color:black;
+}
+
+/*bottom sliders*/
+#lists{
+	width:984px;
+	height:470px;
+	overflow:hidden;
+	clear:both;
+	position:relative;
+	margin-top:30px;
+}
+#lovelist_divider{
+	clear:left;
+	margin-bottom:10px;
+}
+
+#items a.items{
+	display:block;
+	width:118px;
+	height:155px;
+	float:left;
+	cursor:default;
+	position:relative;
+	border:1px solid white;
+	margin-right:3px;
+}
+#items a.items{
+	cursor:move;
+}
+#lovelist a.items{
+	display:block;
+	width:118px;
+	height:155px;
+	float:left;
+	cursor:default;
+	position:relative;
+	border:1px solid white;
+	_border-width:0px;
+	margin-right:0px;
+}
+#lovelist a.items:hover{
+	height:200px;
+}
+#lovelist a.items img{
+	border:1px solid #ccc;
+}
+#items a.items:hover{
+	background:black;
+	color:white;
+	height:200px;
+}
+a.items img{
+	margin:9px;
+}
+a.items p{
+	font-size:8px;
+	width:105px;
+	margin:0px auto;
+	display:none;
+}
+a.items:hover p{
+	display:block;
+	color:white;
+}
+
+a.items p.name{
+	color:black;
+	font-size:9px;
+	text-align:center;
+	display:block;
+}
+a.items:hover p.name{
+	color:white;
+	text-align:left;
+}
+a.items p.view{
+	cursor:pointer;
+	bottom:16px;
+	position:absolute;
+	width:100px;
+	left:5px;
+	padding:4px 3px 0px 3px;
+}
+a.items:hover p.view{
+	border-top:1px solid #3f3f3f;
+}
+a.items p.view:hover{
+	color:#666666;
+}
+a.items p.drag{
+	bottom:5px;
+	left:5px;
+	padding:0px 3px;
+	position:absolute;
+}
+
+.brand-id-50 #product_details p.title, 
+.brand-id-8 #product_details p.title{
+	text-transform:none;
+}
+
+#items_wrapper{
+	border-bottom:1px solid #ccc;
+	margin-bottom:10px;
+	margin-top:20px;
+	position:relative;
+	height:160px;
+	float:left;
+	width:990px;
+	z-index:3000;
+}
+#items{
+	width:3600px;
+	display:block;
+	position:absolute;
+	z-index:1000;
+}
+#smallarrows{
+	width:75px;
+	height:40px;
+	clear:both;
+}
+#smallarrows span{
+	margin-top:5px;
+	font-size:77%;
+}
+
+a.items p.remove{
+	letter-spacing:-0.01em;
+	bottom:5px;
+	left:5px;
+	position:absolute;
+	cursor:pointer;
+	margin:0px;
+	padding:0px 3px;
+}
+a.items p.remove:hover{
+	color:#666666;
+}
+#message{
+	background:url('/img/brands/login.jpg') no-repeat center 10px;
+	height:111px;
+	width:721px;
+}
+#message a{
+	margin:70px 270px;
+}
+#lovelist_wrapper.wrapper{
+	width:720px;
+	_width:724px;
+	height:220px;
+	overflow:hidden;
+	position:relative;
+}
+#lovelist{
+	width:3600px;
+	display:none;
+}
+a.filledslot:hover{
+	background:black;
+	color:white;
+	height:200px;
+}
+a.filledslot:hover img{
+	border-color:black;
+}
+a.filledslot .view{
+	cursor:pointer;
+}
+#more{
+	margin-top:10px;
+	width:170px;
+	float:left;
+	clear:none;
+}
+#more a{
+	width:150px;
+	background:#bf1c23;	
+	color:#FFFFFF;
+	text-align:center;
+	font-size:93%;
+	display:block;
+	height:29px;
+	padding:10px;
+	margin-bottom:2px;
+}
+.lovelist-rightarrow{
+	margin-right:21px;
+	_margin-right:10px;
+}
+.move-down{
+	margin-top:10px;
+}

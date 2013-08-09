@@ -1,0 +1,26 @@
+<?php if(isset($users)){?>
+<form id="search-form" method="post" action="">
+	<label>Month:</label>
+	<input type="text" name="data[Search][m]" />
+	<label>Day:</label>
+	<input type="text" name="data[Search][d]" />
+	<label>Year:</label>
+	<input type="text" name="data[Search][y]" />
+	<input type="submit" value="Search" />
+</form>
+<table>
+	<th></th>
+	<th>User</th>
+	<th>Time</th>
+	<?php 
+	$i = 1;
+	foreach($users as $e){ ?>
+	<tr>
+		<td><?php echo $i; ?></td>
+		<td><?php echo $e['Fbuser']['facebook_id']; ?></td>
+		<td><?php echo $e['Event']['created']; ?></td>
+		<td><a href="/admins/fb_email/<?php echo $e['Fbuser']['facebook_id']; ?>">Send email</a></td>
+	</tr>
+	<?php $i++; } ?>
+</table>
+<?php } ?>

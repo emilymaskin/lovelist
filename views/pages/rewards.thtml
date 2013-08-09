@@ -1,0 +1,129 @@
+<h1><span class="hide">BOUTIQUE REWARDS PROGRAM</span></h1>
+<h2 class="subtitle1"><span class="hide">THE MORE YOU EXPLORE THE MORE YOU CAN WIN!</span></h2>
+<?php if(! $signed_in) { ?>
+<h2 class="subtitle2"><span class="hide">SIGN UP NOW VIA FACEBOOK CONNECT</span></h2>
+<a href="javascript:;" onclick="fb_login();" class="fbook float-left">
+	<img src="http://wiki.developers.facebook.com/images/a/ac/Connect_light_medium_short.gif" alt="" border="0" />
+</a>
+<div style="height:20px;width:100%;float:left;"></div>
+<?php } ?>
+<div id="user" style="display:none;">
+	<div>
+		<p id="username"></p>
+	</div>
+	<img src="/img/rewards/icon_blank.jpg" alt="" />
+	<div>
+		<p class="member"></p>
+		<p class="points"></p>
+	</div>
+</div>
+<div style="clear:both;"></div>
+<div id="middle">
+	<img src="/img/rewards/boxes.jpg" alt="" class="main-image" />
+	<div id="details">
+		<h3 class="subhead1"><span class="hide">HOW IT WORKS</span></h3>
+		<p>
+			Sign in via Facebook Connect and earn member points as you browse the Boutique. Earning points boosts your membership to a higher level and opens doors to bigger potential prizes.
+		</p>
+		<h3 class="subhead2"><span class="hide">EARNING POINTS</span></h3>
+		<p>			
+			After sign-in, member points accrue automatically by performing any of the following actions (one point awarded for each). 
+		</p>
+		<br/>
+		<ul>
+			<li>Sign up via Facebook Connect</li>
+		    <li>Watch a video</li>
+		    <li>Share a link to Facebook or other social media site</li>
+		    <li>Click on a collection item (one point for each item)</li>
+		    <li>Add an item to your Love List (one point for each item)</li>
+		    <li>Return visits</li>
+		</ul>
+		<br/>
+		<p>
+			Prize packages and giveaways are available only to members at the levels detailed below. Points are cumulative, and you are only eligible to win on giveaway days if you are signed into the site via Facebook Connect. So sign up everyday and start earning points. It's easy!
+		</p>
+	</div>
+</div>
+<div id="bottom">
+	<div id="levels">
+		<h3 class="subhead3"><span class="hide">MEMBERSHIP LEVELS</span></h3>
+		<img src="/img/rewards/silver.jpg" alt="silver" class="box" />
+		<div>	
+			<h4 class="silver_head"><span class="hide">SILVER</span></h4>
+			<p>
+				For trendsetters with an eye for style. This is the first tier of membership, giving members access to items from some of our stylish Boutique participants. All prize packages have a retail value of at least $165.
+			</p>
+		</div>
+		<img src="/img/rewards/gold.jpg" alt="gold" class="box" />
+		<div>
+			<h4 class="gold_head"><span class="hide">GOLD</span></h4>
+			<p>
+				Rewarding your 24-karat passion for fashion. This next tier of membership provides access to exclusive prize packages provided by some of our chicest Boutique brands. All prizes have a retail value of at least $300.
+			</p>
+		</div>
+		<img src="/img/rewards/platinum.jpg" alt="platinum" class="box" />
+		<div>
+			<h4 class="platinum_head"><span class="hide">PLATINUM</span></h4>
+			<p>
+				The ultimate in boutique chic! This premium tier unlocks the most valuable prize giveaways from some of our exclusive Boutique partners. All prizes have a retail value of more than $525!
+			</p>
+		</div>
+	</div>
+	<div id="prizes">
+		<h3 class="subhead4"><span class="hide">PRIZES</span></h3>
+		<p>
+			Check for frequent e-mails to your Facebook account for up-to-date prize packages or <a href="/pages/faqs/#rewards">click here</a> for a complete list.
+		</p>
+		<p>
+			Please Note: Membership levels provide prize eligibility access only and do not guarantee the delivery of prizes. You must sign in and allow for us to communicate to you via Facebook Connect to be notified about winnings and prizes. All rewards, giveaways, promotions and gifts are determined at the sole discretion of InStyle Boutique.
+		</p>
+	</div>
+	<p class="disclaimer">NO PURCHASE NECESSARY. Purchasing does not improve your chances of winning. The InStyle Boutique Daily Rewards Giveaway Sweepstakes is open to residents of the 50 US and DC, age 18 or older. Void outside US, Puerto Rico and wherever else prohibited by law. Sweepstakes begins at 12:01AM ET on 8/13/10 and ends at 11:59PM ET on 9/17/10. For Entry Details and Official Rules, see <a href="http://www.TheInStyleBoutique.com">www.TheInStyleBoutique.com</a>. To enter, go to <a href="http://www.TheInStyleBoutique.com">www.TheInStyleBoutique.com</a> and sign in via Facebook Connect. Click here for <a href="/pages/faqs/#rules">Sweeps Facts and Official Rules</a>. Sponsor: <span class="italic">InStyle</span>, a division of Time Inc.
+</div>
+<script type="text/javascript">
+Event.observe(window,'load', function(){
+	FB.getLoginStatus(function(response) {
+		if (response.session)
+		{
+			// logged in and connected user, someone you know
+			$('user').show();
+			FB.api('/me', function(response) {
+			  $('username').innerHTML = response.name;
+			});
+		}
+		else
+		{
+			// no user session available, someone you dont know
+		}
+	});
+});
+function updatePointsBar($points)
+{
+	if($points < 100)
+	{
+		$$('div#user div p.member')[0].innerHTML = '&nbsp;';
+		$$('div#user div p.points')[0].innerHTML = (100 - $points) + ' Points to Silver Level';
+	}
+	else if($points >= 100 && $points < 199)
+	{
+		$$('div#user img')[0].src = '/img/rewards/icon_silver.jpg';
+		$$('div#user div p.member')[0].innerHTML = 'Silver Member';
+		$$('div#user div p.points')[0].innerHTML = (200 - $points) + ' Points to Gold Level';
+	}
+	else if($points >= 200 && $points < 299)
+	{
+		$$('div#user img')[0].src = '/img/rewards/icon_gold.jpg';
+		$$('div#user div p.member')[0].innerHTML = 'Gold Member';
+		$$('div#user div p.points')[0].innerHTML = (300 - $points) + ' Points to Platinum Level';
+	}
+	else if($points >= 300)
+	{
+		$$('div#user img')[0].src = '/img/rewards/icon_platinum.jpg';
+		$$('div#user div p.member')[0].innerHTML = 'Platinum Member';
+		$$('div#user div p.points')[0].innerHTML = '';
+	}
+}
+<?php if(isset($points)) { ?>
+updatePointsBar(<?php echo $points; ?>);
+<?php } ?>
+</script>

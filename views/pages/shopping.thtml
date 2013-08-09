@@ -1,0 +1,99 @@
+	<h1></h1>
+	<div id="left">
+		<?php 
+			if(strlen($today)==3)
+				$today = '0' . $today;
+			echo '<img src="/img/shopping/tips/s'.$today.'.jpg" alt="" id="tips_hero"/>'; ?>
+		<p id="tips_credit"></p>
+	</div>
+	<div id="text">
+		<h4 id="tips_date"></h4>
+		<h3 id="tips_title"></h3>
+		<p id="tips_description"></p>
+		<br />
+		<a href="javascript:;" class="next-tip" onclick="nextTip();">NEXT TIP &#9658;</a>
+	</div>
+	<div id="shopping_wrapper">
+		<div id="shopping_right">
+			<h4><span class="hide">More Shopping Tips</span></h4>
+			<div class="arrow-div">
+				<a onclick="javascript:scrollBack();"><img src="/img/shopping/uparrow.jpg" alt="" /></a>
+			</div>
+			<div id="menu_wrapper">
+				<div id="menu">
+					<?php $i = 0; foreach($tips as $e) { $i++; ?>
+					<a href="javascript:;" id="div<?php echo $i; ?>" onclick="changeTip(<?php echo $i; ?>);">
+						<img src="/img/shopping/tips/s<?php echo $e['Tip']['id']; ?>_thumb.jpg" alt="" id="s<?php echo $i; ?>" class="shopping_image" />
+						<div id="tip_id_<?php echo $e['Tip']['id']; ?>" class="info">
+							<span id="date<?php echo $i; ?>"><?php echo date("m/d/y", strtotime($e['Tip']['date'])); ?></span>
+							<p id="title<?php echo $i; ?>"><?php echo $e['Tip']['title']; ?></p>
+							<p id="description<?php echo $i; ?>" style="display:none;"><?php echo $e['Tip']['text']; ?></p>
+							<p id="credit<?php echo $i; ?>" style="display:none"><?php echo $e['Tip']['credit']; ?></p>
+						</div>
+					</a>
+					<?php } ?>
+				</div>
+			</div>
+			<div class="arrow-div">
+				<a onclick="javascript:scrollForward();"><img src="/img/shopping/downarrow.jpg" alt="" /></a>
+			</div>
+			<div id="bottom">
+			</div>
+		</div>
+		<a href="http://www.instyle.com" class="bottomlink">MORE SHOPPING TIPS AT INSTYLE.COM &#9658;</a><br />
+		<a href="/pages/books" class="bottomlink">MORE STYLE ADVICE! SHOP <em>INSTYLE</em> BOOKS &#9658;</a>
+	</div>
+
+
+<script type="text/javascript">
+	
+	var shopping_slider;
+	var current_tip = 1;
+	var current_bottom = 3;
+	
+	Event.observe(window,'load',function(){
+		shopping_slider = new HU.Slider({div_id: 'menu', total_slots:3, slide_by:82, duration: 0.3, list_size: <?php echo count($tips); ?>, effect: 'slideVertical'});
+		changeTip(1);
+	});
+			
+	function changeTip(change_to)
+	{
+		if($('div'+change_to))
+		{
+			$('tips_date').innerHTML = $('date'+change_to).innerHTML;
+			$('tips_hero').src = "/img/shopping/tips/s" + $$('#div' + change_to + ' div.info')[0].id.replace('tip_id_', '') + ".jpg";
+			$('tips_credit').innerHTML = $('credit'+change_to).innerHTML;
+			$('tips_title').innerHTML = $('title'+change_to).innerHTML;
+			$('tips_description').innerHTML = $('description'+change_to).innerHTML;
+			if($('div'+current_tip))
+				$('div'+current_tip).removeClassName('current');
+			$('div'+change_to).addClassName('current');
+			current_tip = change_to;
+		}
+	}
+	function nextTip()
+	{
+		if(current_tip >= current_bottom)
+			scrollForward();
+		if($('div'+(shopping_slider.list_size)).hasClassName('current'))
+			changeTip(1);
+		else
+			changeTip(current_tip+1);
+	}
+	
+	function scrollBack(){
+		if(shopping_slider.first_slot == 1)
+			shopping_slider.end();
+		else
+			shopping_slider.prev();
+		current_bottom = shopping_slider.first_slot + shopping_slider.total_slots - 1;
+	}
+	
+	function scrollForward(){
+		if(current_bottom == shopping_slider.list_size)
+			{shopping_slider.start();}
+		else
+			shopping_slider.next();
+		current_bottom = shopping_slider.first_slot + shopping_slider.total_slots - 1;
+	}
+</script>

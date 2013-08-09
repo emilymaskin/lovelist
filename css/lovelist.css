@@ -1,0 +1,42 @@
+h1{
+	background:url(/img/lovelist/lovelist_title.jpg) no-repeat top left;
+	height:140px;
+	width:100%;
+}
+.step{
+	float:left;
+	width:100%;
+	margin-bottom:36px;
+}
+.step img{
+	float:left;
+	margin-right:19px;
+}
+.step p{
+	float:left;
+	width:380px;
+	font-size:19px;
+}
+
+#lists{
+	height:240px;
+}
+
+h2{
+	width:480px;
+	height:26px;
+	float:left;
+}
+
+h2.subhead1{
+	background:url(/img/lovelist/subhead1.jpg) no-repeat top left;
+}
+h2.subhead2{
+	background:url(/img/lovelist/subhead2.jpg) no-repeat top left;
+}
+h2.subhead3{
+	background:url(/img/lovelist/subhead3.jpg) no-repeat top left;
+}
+h2.subhead4{
+	background:url(/img/lovelist/subhead4.jpg) no-repeat top left;
+}

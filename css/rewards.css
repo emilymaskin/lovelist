@@ -1,0 +1,161 @@
+.main-image{
+	float:left;
+	margin-right:20px;
+	clear:both;
+}
+
+.current_brand{
+	text-transform:uppercase;
+}
+
+#middle{
+	float:left;
+	margin-bottom:30px;
+}
+h1{
+	height:100px;
+	width:625px;
+	clear:both;
+	display:inline;
+	float:left;
+	background:url(/img/rewards/title.jpg) no-repeat top left;
+}
+h2.subtitle1{
+	height:20px;
+	width:345px;
+	clear:both;
+	display:inline;
+	float:left;
+	background:url(/img/rewards/subtitle1.jpg) no-repeat top left;
+}
+h2.subtitle2{
+	height:20px;
+	width:280px;
+	clear:none;
+	display:inline;
+	float:left;
+	background:url(/img/rewards/subtitle2.jpg) no-repeat top left;
+}
+.fbook{
+	clear:none;
+}
+.fbook img{
+	width:70px;
+}
+#user{
+	height:34px;
+	width:970px;
+	background:black;
+	clear:both;
+	color:white;
+	margin-bottom:20px;
+	padding:3px 10px;
+}
+#user div{
+	display:inline;
+	float:left;
+}
+#user img{
+	float:left;
+	margin-top:4px;
+	width:27px;
+}
+#username{
+	font-size:197%;
+	width:720px;
+	text-transform:uppercase;
+	padding:2px 0px;
+}
+#user div p.member{
+	font-size:123.1%;
+	width:200px;
+	text-align:right;
+	text-transform:uppercase;
+}
+#user div p.points{
+	font-size:93%;
+	width:200px;
+	text-align:right;
+	text-transform:uppercase;
+}
+h3{
+	height:35px;
+	width:532px;
+	float:left;
+}
+h3.subhead1{
+	background:url(/img/rewards/subhead1.jpg) no-repeat top left;
+}
+h3.subhead2{
+	background:url(/img/rewards/subhead2.jpg) no-repeat top left;
+	margin-top:20px;
+}
+h3.subhead3{
+	background:url(/img/rewards/subhead3.jpg) no-repeat top left;
+	height:45px;
+}
+h3.subhead4{
+	background:url(/img/rewards/subhead4.jpg) no-repeat top left;
+}
+#details{
+	line-height:18px;
+}
+#details li{
+	list-style:disc;
+	list-style-position:inside;
+}
+h4{
+	height:45px;
+	width:400px;
+	clear:none;
+}
+h4.silver_head{
+	background:url(/img/rewards/silver_head.jpg) no-repeat top left;
+}
+h4.gold_head{
+	background:url(/img/rewards/gold_head.jpg) no-repeat top left;
+}
+h4.platinum_head{
+	background:url(/img/rewards/platinum_head.jpg) no-repeat top left;
+}
+.box{
+	width:100px;
+	height:100px;
+	float:left;
+	clear:left;
+	margin-right:20px;
+}
+#bottom{
+	width:990px;
+	float:left;
+}
+#levels div{
+	float:left;
+	display:inline;
+	margin-bottom:25px;
+}
+#levels p{
+	width:455px;
+}
+#prizes{
+	clear:both;
+}
+#prizes p{
+	clear:both;
+	margin-bottom:10px;
+}
+#prizes h3.subhead{
+	width:990px;
+}
+p.disclaimer{
+	font-size:77%;
+	line-height:12px;
+	margin-top:20px;
+	clear:both;
+}
+p.disclaimer span.italic{
+	font-style:italic;
+}
+a{
+	color:#666;
+}

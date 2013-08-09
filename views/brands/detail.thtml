@@ -1,0 +1,143 @@
+<?php
+$video_ext = $brand['id'] == '31' ? '.flv' : '.f4v';
+$video = file_exists(WWW_ROOT . 'brand_videos/' . $brand['id'] . $video_ext) ? '/brand_videos/' . $brand['id'] . $video_ext : false;
+$image = file_exists(WWW_ROOT . 'brand_videos/' . $brand['id'] . '.jpg') ? '/brand_videos/' . $brand['id'] . '.jpg' : false;
+?>
+<div>
+	<ul id="path">
+		<?php if ($this->controller->name == 'Brands'){ ?>
+			<li><a href="/departments/main">SHOP BY DEPARTMENT</a></li>
+			<li class="divider">&gt;</li>
+			<li><a href="/departments/<?php echo $department['slug']; ?>" class="uppercase"><?php echo $department['name']; ?></a></li>
+			<li class="divider">&gt;</li>
+			<li><a href="/brand/<?php echo $brand['slug']; ?>" class="current_brand uppercase"><?php echo $brand['name']; ?></a></li>
+		<?php } ?>
+	</ul>
+</div>
+<div class="mainbox<?php echo !$video ? '-border' : ''; ?>">
+	<div id="video">
+		<?php if($video) { ?>
+		<object id="brand_video" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="640" height="480">
+			<param name="movie" value="/flash/video_player.swf" />
+			<param name="flashvars" value="firstVideo=<?php echo $video; ?>&amp;preRollVideo=" />
+			<param name="allowScriptAccess" value="sameDomain" />
+			<!--[if !IE]>-->
+			<object type="application/x-shockwave-flash" data="/flash/video_player.swf" width="640" height="480">
+				<param name="flashvars" value="firstVideo=<?php echo $video; ?>&amp;preRollVideo=" />
+				<param name="allowScriptAccess" value="sameDomain" />
+			<!--<![endif]-->
+		        <p class="flash-message">This page requires flash.</p>
+			<!--[if !IE]>-->
+			</object>
+			<!--<![endif]-->
+		</object>
+		<script type="text/javascript">
+			Event.observe(window,'load', function(){
+				HU.EventTracker.add('video_load',<?php echo $brand['id']; ?>);
+			});
+		</script>
+		<?php } 
+		elseif($image) 
+			echo $image_url != '' ? '<a href="' . $image_url . '"><img src="' . $image . '" alt="" /></a>' : '<img src="' . $image . '" alt="" />';
+		?>
+	</div>
+</div>
+<div<?php echo isset($brand['id']) ? ' class="brand-id-' . $brand['id'] . '"' : ''; ?>>
+	<div class="details-box">
+		<a name="product_detail" id="product_detail"></a>
+		<div id="brand_logo" class="center">
+			<img src="/brand_logos/<?php echo $brand['id']; ?>.jpg" alt="" />
+		</div>
+		<?php if($product_count > 1) {?>
+		<a href="javascript:;" onclick="HU.LoveList.details_slider.prev();" class="float-left"><img src="/img/lovelist/small_leftarrow.jpg" alt="Previous" /></a>
+		<?php } ?>
+		<div id="product_details" style="height:<?php echo $brand['offer_url'] == '' ? '366px' : '341px'; ?>;">
+			<?php for($j=0; $j < count($products); $j++) { ?>
+			<div id="details_<?php echo $j; ?>" style="display:<?php echo $j==0 ? 'block' : 'none'; ?>;">
+				<img src="/product_images/main/<?php echo $products[$j]['id']; ?>.jpg" alt="<?php echo $products[$j]['name']; ?>" class="featured" />
+				<p class="title"><?php echo $products[$j]['name']; ?></p>
+				<p class="description"><?php echo $products[$j]['description']; ?></p>
+				<p class="price"><?php echo $products[$j]['price']; ?></p>
+				<p class="price-text"><?php echo $products[$j]['price_text']; ?></p>
+			</div>
+			<?php } ?>
+		</div>
+		<?php if($product_count > 1) {?>
+		<a href="javascript:;" onclick="HU.LoveList.details_slider.next();" class="float-left"><img src="/img/lovelist/small_rightarrow.jpg" alt="Next" /></a>
+		<?php } ?>
+		<?php if($brand['special_offer']!=''){ ?>
+			<div class="details_links center">
+				<a href="<?php echo $products[0]['buy_url']; ?>" class="buy_now uppercase" id="buy" target="_blank"><?php echo $brand['buy_now_text'] != '' ? $brand['buy_now_text'] : 'BUY NOW'; ?></a>
+				<a href="/pages/special_offers" class="special_offer" id="offer">SPECIAL OFFER</a>
+		<?php } else{ ?>
+			<div class="details_links center">
+				<a href="<?php echo $products[0]['buy_url']; ?>" class="buy_now uppercase" id="buy" target="_blank"><?php echo $brand['buy_now_text'] != '' ? $brand['buy_now_text'] : 'BUY NOW'; ?></a>
+		<?php } ?>
+			<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=250&username=xa-4c44a4b53a3442e1"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:none;float:left;"/></a>
+			<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4c44a4b53a3442e1"></script>
+		</div>
+	</div>
+	<div id="lists">
+		<div id="items_wrapper" class="wrapper">
+			<div id="items">
+				<?php for($j=0; $j < count($products); $j++) { ?>
+				<a href="#<?php echo $products[$j]['id']; ?>" class="items" id="item<?php echo $j+1; ?>" onclick="HU.LoveList._lovelistSwitchTo(<?php echo $j; ?>,<?php echo $products[$j]['id']; ?>);" style="border:1px #<?php echo $j==0 ? 'CCCCCC' : 'FFFFFF'; ?> solid;">
+					<img id="product_<?php echo $products[$j]['id']; ?>" style="cursor:move;" src="/product_images/thumb/<?php echo $products[$j]['id']; ?>.jpg" alt="<?php echo $products[$j]['name']; ?>" />
+					<p class="name"><?php echo $products[$j]['name']; ?></p>
+					<p><?php echo $products[$j]['price']; ?></p>
+					<p class="view" onclick="HU.LoveList.details_slider.switchTo(<?php echo $j; ?>)">VIEW PRODUCT DETAIL</p>
+					<p class="drag">DRAG TO LOVE LIST</p>
+				</a>
+				<?php } ?>
+			</div>
+		</div>
+		<div id="smallarrows"  class="center">
+			<?php if($product_count > 1) {?>
+			<a href="javascript:;" onclick="HU.LoveList.details_slider.prev();" class="float-left"><img src="/img/lovelist/small_leftarrow.jpg" alt="Previous" /></a>
+			<?php } ?>
+			<span id="item_shown" class="float-left"></span><span id="total_items" class="float-left"></span>
+			<?php if($product_count > 1) {?>
+			<a href="javascript:;" onclick="HU.LoveList.details_slider.next();" class="float-left"><img src="/img/lovelist/small_rightarrow.jpg" alt="Next" /></a>
+			<?php } ?>
+		</div>
+
+		<img src="/img/brands/lovelist_divider.jpg" alt="" id="lovelist_divider" />
+		<div id="lovelist-section">
+			<a href="javascript:;" onclick="HU.LoveList.lovelist_prev();" class="float-left move-down"><img src="/img/lovelist/leftarrow.jpg" alt="Previous" /></a>
+			<div id="lovelist_wrapper" class="float-left wrapper">
+				<div id="lovelist">
+				</div>
+				<?php if (!$this->controller->getFbuser()) { ?>
+				<div id="message">
+					<a href="javascript:;" onclick="fb_login();" class="float-left">
+						<img src="http://static.ak.fbcdn.net/rsrc.php/zB6N8/hash/4li2k73z.gif" border="0" alt="" />
+					</a>
+				</div>
+				<?php } ?>
+			</div>
+			<a href="javascript:;" onclick="HU.LoveList.lovelist_next();" class="float-left lovelist-rightarrow move-down"><img src="/img/lovelist/rightarrow.jpg" alt="Next" /></a>
+			<div id="more">
+				<?php if (!$this->controller->getFbuser()) { ?>
+				<a href="javascript:;" onclick="fb_login();" class="more_products">SHOP MORE PRODUCTS YOU'LL LOVE</a>
+				<?php } elseif(isset($url)) { ?>
+				<a href="<?php echo '/stylefeeder/view/' . @$brand['slug'] . '#/' . $url['name'] . '/u/' . $url['brands'] . '//2-11////variety-none/////'; ?>" class="more_products">SHOP MORE PRODUCTS YOU'LL LOVE</a>
+				<?php } else { ?>
+				<a href="/departments/main" class="more_products">SHOP MORE PRODUCTS YOU'LL LOVE</a>
+				<?php } ?>
+				<?php if(isset($silo)){ ?>
+				<a href="/stylefeeder/view/<?php echo $brand['slug']; ?>#/<?php echo $silo['slug']; ?>/u/<?php echo $brand['stylefeeder_name']; ?>//2-11//<?php echo $brand['id'] == "17" ? 'Ties' : ''; ?>//variety-none/////" class="shop_more uppercase">SHOP MORE <?php if(strlen($brand['name'])>16) echo $brand['name']; else echo "<br/>".$brand['name']; ?></a>	
+				<?php } ?>
+			</div>	
+		</div>
+	</div>
+	<script type="text/javascript">
+		Event.observe(window,'load', function(){
+			HU.LoveList.total_list_slots = 6;
+			HU.LoveList.in_list_array = <?php echo $in_list; ?>;
+			HU.LoveList.logged_in = <?php echo $signed_in  ? 'true' : 'false'; ?>;
+			HU.LoveList.brand_id = <?php echo $brand['id']; ?>;
+			HU.LoveList.load(<?php echo $product_list; ?>);
+			addthis.addEventListener('addthis.menu.share', function(evt) {HU.EventTracker.add('share',<?php echo $brand['id']; ?>)});
+		});	
+	</script>
+</div>

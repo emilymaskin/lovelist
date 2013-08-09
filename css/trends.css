@@ -1,0 +1,175 @@
+#wrapper{
+	width:982px;
+	height:600px;
+}
+.inline{
+	float:left;
+	clear:none;
+}
+div.inline{
+	height:370px;
+}
+h1{
+	background:url(/img/trends/trends_title.jpg) no-repeat top left;
+	width:100%;
+	height:110px;
+	clear:both;
+}
+.current{
+	background:white;
+}
+.current h2,.current p{
+	color:black;
+}
+#trends_left{
+	width:198px;
+	height:354px;
+	margin-right:7px;
+	padding:10px 1px;
+	background:#000000;
+}
+.eachtrend{
+	width:100%;
+	height:77px;
+	color:black;
+	float:left;
+	clear:left;
+	padding:5px 0px;
+	color:white;
+	cursor:pointer;
+}
+.eachtrend h2{
+	font-size:108%;
+	font-weight:bold;
+	margin-top:4px;
+}
+.eachtrend p{
+	float:left;
+	clear:none;
+	width:80px;
+	font-size:85%;
+	margin-top:3px;
+}
+.eachtrend img{
+	width:75px;
+	height:75px;
+	background:#000000;
+	float:left;
+	margin:0px 8px;
+}
+
+#trends_middle{
+	width:492px;
+	height:372px;
+	margin-right:7px;
+	border:1px solid #ccc;
+}
+
+#trends{
+	position:absolute;
+}
+div.left-arrow{
+	position:absolute;
+	z-index:1;
+	left:0px;
+	top:42px;
+	_top:37px;
+	height:220px;
+	width:46px;
+	background:#000;
+}
+div.right-arrow{
+	position:absolute;
+	z-index:1;
+	right:0px;
+	top:42px;
+	_top:37px;
+	height:220px;
+	width:46px;
+	background:#000;
+}
+div.left-arrow img{
+	cursor:pointer;
+	margin:100px 0px 0px 20px;
+}
+div.right-arrow img{
+	cursor:pointer;
+	margin:100px 0px 0px 15px;
+}
+#fashion,#makeup,#accessories,#hair{
+	position:relative;
+	overflow:hidden;
+	width:272px;
+	height:310px;
+}
+.each_item{
+	position:absolute;
+	width:272px;
+	height:300px;
+}
+#trends_right{
+	float:left;
+	clear:none;
+	width:272px;
+}
+#trends_slider{
+	width:272px;
+	background:black;
+	color:white;
+	float:left;
+	position:relative;
+	overflow:hidden;
+	height:374px;
+}
+#trends_slider h3{
+	background:#000000;
+	width:272px;
+	font-size:182%;
+	height:24px;
+	padding:9px 0px;
+	_padding:6px 0px;
+	text-align:center;
+}
+#trends_slider h3 span{
+	font-weight:bold;
+}
+#trends_slider .each_item img
+{
+	margin:0px auto 5px auto;
+	display:block;
+}
+#trends_slider h4{
+	font-size:116%;
+	color:white;
+	padding-top:5px;
+	clear:both;
+	width:272px;
+	height:20px;
+	text-align:center;
+}
+#trends_slider p{
+	width:250px;
+	font-size:85%;
+	margin:3px auto;
+}
+#trends_slider p span{
+	float:right;
+	*float:none;
+	*margin-left:10px;
+}
+p.description{
+	height:40px;
+}
+#buy{
+	width:100%;
+	height:12px;
+	line-height:11px;
+	background-color:#bf1c23;
+	clear:both;
+	padding:5px 0px;
+	text-align:center;
+}
+#buy a{
+	font-size:93%;
+	color:#FFFFFF;
+}

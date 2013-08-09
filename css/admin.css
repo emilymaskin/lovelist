@@ -1,0 +1,57 @@
+#content{
+	width:300px;
+	margin:20px auto;
+	border:3px double #aaa;
+	padding:25px;
+}
+#admin-nav{
+	margin-bottom:20px;
+}
+input,textarea{
+	display:block;
+	margin-bottom:10px;
+}
+#search-form{
+	width:60px;
+	margin:0px auto;
+}
+#search-form input{
+	width:60px;
+}
+table{
+	border:1px solid #333;
+	margin:10px auto;
+	width:400px;
+}
+th{
+	border:1px solid #333;
+	padding:3px;
+}
+tr{
+	border:1px solid #333;
+}
+td{
+	border:1px solid #333;
+	padding:3px;
+}
+#admin-nav li{
+	display:inline;
+	padding-right:10px;
+}
+#email-form{
+	clear:both;
+}
+#email-form input{
+	width:300px;
+}
+#email-form textarea{
+	width:300px;
+	height:300px;
+}
+#email-form input.button{
+	width:60px;
+}
+#userpic{
+	float:left;
+	margin:0px 10px 10px 0px;
+}
